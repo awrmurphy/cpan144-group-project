@@ -1,6 +1,6 @@
 export default function Green() {
   return (
-    <div>
+    <div className="h-screen">
       <h1>Green Energy Page</h1>
       <p>
         This page will feature tiles with different types of green energy
