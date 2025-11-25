@@ -8,33 +8,41 @@ export default function Home() {
   const developers = ["Attah Attah", "Anthony Murphy", "Adebisi Oyewole", "Hiryti Mebrahtu", "Turner Cortese"];
 
   return (
-    <div className="h-screen p-8 bg-green-50">
-      <h1 className="text-4xl font-bold mb-4">Welcome to Green Energy Tracker</h1>
-      <p className="mb-6 text-gray-700">
-        This site helps you explore green energy options, log your actions, and learn sustainable habits.
-      </p>
+    <div className="min-h-screen p-8 pt-0 bg-emerald-50 flex flex-col justify-around">
+      {/*Welcome Section */}
+      <section>
+        <h1 className="text-4xl font-bold mb-4 text-slate-900">Welcome to Green Energy Tracker</h1>
+        <p className="mb-6 text-slate-700">
+          This site helps you explore green energy options, log your actions, and learn sustainable habits.
+        </p>
+      </section>
 
-      {/* Features */}
-      <h2 className="text-2xl font-semibold mb-2">Features</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-        {features.map((f, index) => (
-          <div
-            key={index}
-            className="p-4 bg-white rounded-xl shadow hover:scale-105 transition transform cursor-pointer"
-          >
-            <h3 className="font-bold">{f.title}</h3>
-            <p className="text-gray-600">{f.desc}</p>
-          </div>
-        ))}
-      </div>
+      {/* Features Section */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-2 text-slate-900">Features</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {features.map((f, index) => (
+            <div
+              key={index}
+              className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
+              <h3 className="font-bold text-emerald-700 mb-2">{f.title}</h3>
+              <p className="text-slate-600">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* Developers */}
-      <h2 className="text-2xl font-semibold mb-2">Developers</h2>
-      <ul className="list-disc list-inside text-gray-700">
-        {developers.map((dev, index) => (
-          <li key={index}>{dev}</li>
-        ))}
-      </ul>
+      {/* Developers Section*/}
+      <section>
+        <h2 className="text-2xl font-semibold mb-2 text-slate-900">Developers</h2>
+        <ul className="list-disc list-inside text-slate-700">
+          {developers.map((dev, index) => (
+            <li key={index}>{dev}</li>
+          ))}
+        </ul>
+      </section>
     </div>
+      
   );
 }
