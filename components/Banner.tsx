@@ -1,11 +1,15 @@
 export default function Banner() {
   return (
-    <div className="h-auto w-auto">
+    <header className="bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-700 text-white py-6 px-8 flex items-center space-x-4 shadow-md">
       <img
-        src="/placeholderBanner.png"
-        alt="placeholder"
-        className="h-auto w-fit object-cover"
+        src="/white-logo.png"
+        //src="/green-logo.png"
+        alt="Green Energy Logo"
+        className="h-16 w-16"
       />
-    </div>
+      <h1 className="text-2xl font-semibold tracking-wide">
+        Welcome to the Green Energy Tracker
+      </h1>
+    </header>
   );
 }
