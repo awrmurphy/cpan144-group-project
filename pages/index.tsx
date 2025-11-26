@@ -19,7 +19,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section>
-        <h2 className="text-2xl font-semibold mb-2 text-slate-900">Features</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-slate-900">Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {features.map((f, index) => (
             <div
@@ -36,7 +36,7 @@ export default function Home() {
       {/* Developers Section*/}
       <section>
         <h2 className="text-2xl font-semibold mb-2 text-slate-900">Developers</h2>
-        <ul className="list-disc list-inside text-slate-700">
+        <ul className="list-none list-inside text-slate-700">
           {developers.map((dev, index) => (
             <li key={index}>{dev}</li>
           ))}
