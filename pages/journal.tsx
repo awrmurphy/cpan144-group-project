@@ -11,35 +11,35 @@ export default function Journal() {
   };
 
   return (
-    <div className="h-screen p-8 bg-green-50">
-      <h1 className="text-3xl font-bold mb-4">Journal</h1>
-      <p className="mb-6">
+    <div className="h-screen p-8 bg-emerald-50">
+      <h1 className="text-3xl font-bold mb-4 text-slate-900">Journal</h1>
+      <p className="mb-6 text-slate-700">
         Log your green energy behaviours here.
       </p>
 
       {/* Input area */}
-      <div className="flex mb-4">
+      <div className="flex mb-6">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Enter your action..."
-          className="flex-1 p-2 rounded-l-xl border border-green-300 focus:outline-none"
+          className="flex-1 p-3 rounded-l-xl border border-emerald-300 focus:outline-nonefocus:ring-2 focus:ring-emerald-500 text-slate-900"
         />
         <button
           onClick={addEntry}
-          className="px-4 bg-green-600 text-white rounded-r-xl hover:bg-green-700 transition"
+          className="px-5 bg-emerald-600 text-white rounded-r-xl hover:bg-emerald-700 transition"
         >
           Add
         </button>
       </div>
 
       {/* Journal entries */}
-      <ul className="space-y-2">
+      <ul className="space-y-3">
         {entries.map((entry, index) => (
-          <li key={index} className="p-4 bg-white rounded-xl shadow">
-            <p>{entry.text}</p>
-            <span className="text-sm text-gray-500">{entry.date}</span>
+          <li key={index} className="p-5 bg-white rounded-xl shadow-md">
+            <p className="text-slate-900">{entry.text}</p>
+            <span className="text-sm text-slate-500">{entry.date}</span>
           </li>
         ))}
       </ul>

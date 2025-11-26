@@ -8,7 +8,7 @@ export default function Home() {
   const developers = ["Attah Attah", "Anthony Murphy", "Adebisi Oyewole", "Hiryti Mebrahtu", "Turner Cortese"];
 
   return (
-    <div className="min-h-screen p-8 pt-0 bg-emerald-50 flex flex-col justify-around">
+    <div className="min-h-screen p-8 pt-6 bg-emerald-50 flex flex-col justify-around">
       {/*Welcome Section */}
       <section>
         <h1 className="text-4xl font-bold mb-4 text-slate-900">Welcome to Green Energy Tracker</h1>
