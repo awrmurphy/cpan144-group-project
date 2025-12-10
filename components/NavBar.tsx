@@ -2,26 +2,24 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <nav className="bg-white shadow-md border-b border-slate-200 w-full">
+    <nav className="bg-white/90 backdrop-blur-sm shadow-md border-b border-slate-200 w-full">
       <div className="flex flex-row justify-center h-12 items-center space-x-8">
-        <Link
-          href="/"
-          className="text-slate-700 hover:text-emerald-600 focus:text-emerald-600 focus:font-semibold focus:border-b-2 focus:border-emerald-500 py-2 px-4 transition-colors duration-200 ease-in-out text-center"
-        >
-          Home
-        </Link>
-        <Link
-          href="/green"
-          className= "text-slate-700 hover:text-emerald-600 focus:text-emerald-600 focus:font-semibold focus:border-b-2 focus:border-emerald-500 py-2 px-4 transition-colors duration-200 ease-in-out text-center"
-        >
-          Green Energy
-        </Link>
-        <Link
-          href="/journal"
-          className="text-slate-700 hover:text-emerald-600 focus:text-emerald-600 focus:font-semibold focus:border-b-2 focus:border-emerald-500 py-2 px-4 transition-colors duration-200 ease-in-out text-center"
-        >
-          Journal
-        </Link>
+        {[
+          { href: "/", label: "Home" },
+          { href: "/green", label: "Green Energy" },
+          { href: "/journal", label: "Journal" },
+        ].map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="relative group text-slate-700 hover:text-emerald-600 py-2 px-2 text-center transition-colors duration-200 ease-in-out"
+          >
+            <span className="transition-transform duration-200 group-hover:scale-105">
+              {item.label}
+            </span>
+            <span className="pointer-events-none absolute left-0 -bottom-0.5 h-0.5 w-0 bg-emerald-500 transition-all duration-300 group-hover:w-full" />
+          </Link>
+        ))}
       </div>
     </nav>
   );
