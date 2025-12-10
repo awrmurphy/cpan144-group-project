@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 async function getJournalEntries(): Promise<Array<{ id: number; text: string; date: string }>> {
  
@@ -38,42 +39,65 @@ export default function Journal() {
   };
 
   return (
-    <div className="h-screen p-8 bg-emerald-50">
-      <h1 className="text-3xl font-bold mb-4 text-slate-900">Journal</h1>
-      <p className="mb-6 text-slate-700">
-        Log your green energy behaviours here.
-      </p>
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, type: "spring", stiffness: 120, damping: 12 }}
+      className="container mx-auto px-4 py-8"
+    >
+      {/* Header */}
+      <section className="text-center mb-8">
+        <h1 className="text-5xl font-bold text-slate-800 mb-4">
+          Journal
+        </h1>
+        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          Log your green energy behaviours and track your progress over time.
+        </p>
+      </section>
 
-      <div className="flex mb-6">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Enter your action..."
-          className="flex-1 p-3 rounded-l-xl border border-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-900"
-        />
-        <button
-          onClick={handleAdd}
-          className="px-5 bg-emerald-600 text-white rounded-r-xl hover:bg-emerald-700 transition"
-        >
-          Add
-        </button>
-      </div>
+      {/* Input */}
+      <section className="max-w-3xl mx-auto mb-10">
+        <div className="flex">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Enter your action..."
+            className="flex-1 p-3 rounded-l-xl border border-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-900 bg-white"
+          />
+          <button
+            onClick={handleAdd}
+            className="px-6 bg-emerald-600 text-white rounded-r-xl hover:bg-emerald-700 transition"
+          >
+            Add
+          </button>
+        </div>
+      </section>
 
-      {loading ? (
-        <p className="text-slate-600">Loading entries...</p>
-      ) : entries.length === 0 ? (
-        <p className="text-slate-600">No entries yet.</p>
-      ) : (
-        <ul className="space-y-3">
-          {entries.map((entry) => (
-            <li key={entry.id} className="p-5 bg-white rounded-xl shadow-md">
-              <p className="text-slate-900">{entry.text}</p>
-              <span className="text-sm text-slate-500">{entry.date}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+      {/* Entries */}
+      <section className="max-w-3xl mx-auto">
+        {loading ? (
+          <p className="text-slate-600">Loading entries...</p>
+        ) : entries.length === 0 ? (
+          <p className="text-slate-600">No entries yet.</p>
+        ) : (
+          <ul className="space-y-4">
+            {entries.map((entry) => (
+              <li
+                key={entry.id}
+                className="p-5 bg-white rounded-xl shadow-md"
+              >
+                <p className="text-slate-900 text-base mb-1">
+                  {entry.text}
+                </p>
+                <span className="text-sm text-slate-500">
+                  {entry.date}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </motion.div>
   );
 }
