@@ -11,10 +11,12 @@ interface WeatherData {
 
 export default function WeatherTile() {
   const [data, setData] = useState<WeatherData | null>(null);
-
+  const ACCESSKEY = process.env.API_KEY;
   useEffect(() => {
     const fetchWeather = (lat: number, lon: number) => {
-      fetch(`/api/weather?lat=${lat}&lon=${lon}`)
+      const url = `http://api.weatherstack.com/current?access_key=ceed63b7ededaff8cf715b5afed890f9&query=${lat},${lon}`;
+      const options = { method: "GET" };
+      fetch(url, options)
         .then((res) => res.json())
         .then((json) => setData(json));
     };
@@ -26,12 +28,10 @@ export default function WeatherTile() {
           fetchWeather(latitude, longitude);
         },
         () => {
-          
           fetchWeather(45.4215, -75.6972);
         }
       );
     } else {
-     
       fetchWeather(45.4215, -75.6972);
     }
   }, []);
@@ -43,7 +43,11 @@ export default function WeatherTile() {
       <h3>Weather — {data.location.name}</h3>
       <p>{data.current.weather_descriptions[0]}</p>
       <p>{data.current.temperature}°C</p>
-      <img src={data.current.weather_icons[0]} alt="weather icon" style={{ width: "60px" }} />
+      <img
+        src={data.current.weather_icons[0]}
+        alt="weather icon"
+        style={{ width: "60px" }}
+      />
     </div>
   );
 }
