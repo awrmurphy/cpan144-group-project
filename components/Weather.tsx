@@ -11,7 +11,6 @@ interface WeatherData {
 
 export default function WeatherTile() {
   const [data, setData] = useState<WeatherData | null>(null);
-  const ACCESSKEY = process.env.API_KEY;
   useEffect(() => {
     const fetchWeather = (lat: number, lon: number) => {
       const url = `http://api.weatherstack.com/current?access_key=ceed63b7ededaff8cf715b5afed890f9&query=${lat},${lon}`;
@@ -40,11 +39,11 @@ export default function WeatherTile() {
 
   return (
     <div className="tile">
-      <h3>Weather — {data.location.name}</h3>
-      <p>{data.current.weather_descriptions[0]}</p>
-      <p>{data.current.temperature}°C</p>
+      <h3>Weather — {data.location?.name}</h3>
+      <p>{data.current?.weather_descriptions[0]}</p>
+      <p>{data.current?.temperature}°C</p>
       <img
-        src={data.current.weather_icons[0]}
+        src={data.current?.weather_icons[0]}
         alt="weather icon"
         style={{ width: "60px" }}
       />
