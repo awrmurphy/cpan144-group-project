@@ -13,7 +13,7 @@ export default function Green() {
       name: "Solar",
       description: "Harnesses sunlight to generate clean electricity",
       blurb: "Solar energy is the most abundant energy resource on Earth. It can be captured and converted into electricity through photovoltaic panels or concentrated solar power systems.",
-      image: "/solar.png",
+      image: "/solarpower.jpg",
       detailedDescription:
         "Solar energy works by converting sunlight directly into electricity using photovoltaic (PV) cells. These cells are made of semiconductor materials that generate electrical current when exposed to light. Solar power is renewable, sustainable, and produces no greenhouse gas emissions during operation. It's becoming increasingly cost-effective and is one of the fastest-growing energy sources worldwide.",
       initiatives: [
@@ -51,7 +51,7 @@ export default function Green() {
       name: "Wind",
       description: "Converts wind movement into renewable electricity",
       blurb: "Wind energy captures the kinetic energy of moving air through wind turbines. It's one of the most cost-effective renewable energy sources and can be deployed both onshore and offshore.",
-      image: "/wind.png",
+      image: "/windpower.jpg",
       detailedDescription:
         "Wind energy is generated when moving air turns the blades of a wind turbine, which spins a generator to produce electricity. Modern wind turbines are highly efficient and can operate in various wind conditions. Wind power is completely renewable, produces no air pollution, and has one of the lowest carbon footprints of any energy source. It's particularly effective in areas with consistent wind patterns.",
       initiatives: [
@@ -89,7 +89,7 @@ export default function Green() {
       name: "Hydroelectric",
       description: "Generates power from flowing water sources",
       blurb: "Hydroelectric power uses the energy of flowing water to generate electricity. It's one of the oldest and most reliable renewable energy sources, providing consistent power output.",
-      image: "/water.png",
+      image: "/hydropower.jpg",
       detailedDescription:
         "Hydroelectric power plants generate electricity by using the force of flowing water to turn turbines connected to generators. This can be achieved through dams that create reservoirs, run-of-river systems, or pumped storage facilities. Hydroelectric power is highly reliable, can respond quickly to electricity demand changes, and often provides additional benefits like flood control and water supply. It's the world's largest source of renewable electricity.",
       initiatives: [
@@ -129,7 +129,7 @@ export default function Green() {
       name: "Geothermal",
       description: "Uses heat from beneath Earth's surface",
       blurb: "Geothermal energy taps into the Earth's internal heat to generate electricity or provide direct heating.",
-      image: "/green-energy-logo.png",
+      image: "/geo.jpg",
       detailedDescription:
         "Geothermal energy works by accessing heat stored beneath the Earth's crust. Power plants convert steam or hot water from underground reservoirs into electricity. It's one of the most reliable renewable sources due to its constant availability, unaffected by weather or season.",
       initiatives: [
@@ -167,7 +167,7 @@ export default function Green() {
       name: "Biomass",
       description: "Converts organic material into usable energy",
       blurb: "Biomass energy uses plant or animal material to produce heat, electricity, or biofuels.",
-      image: "/green-energy-logo.png",
+      image: "/biomass.jpg",
       detailedDescription:
         "Biomass energy involves burning or processing organic materials such as wood, agricultural waste, or algae. It can generate electricity, produce heat, or create renewable fuels like bioethanol and biodiesel. When sourced sustainably, biomass can be carbon-neutral because new plant growth absorbs the CO₂ released during energy production.",
       initiatives: [
@@ -205,7 +205,7 @@ export default function Green() {
       name: "Tidal & Wave",
       description: "Harnesses the power of ocean tides and waves",
       blurb: "Tidal and wave energy capture the natural movement of oceans, offering predictable renewable power.",
-      image: "/green-energy-logo.png",
+      image: "/tidalwave.avif",
       detailedDescription:
         "Tidal and wave energy systems generate power by using underwater turbines or surface oscillation devices. Because ocean tides follow predictable patterns, tidal energy is one of the most reliable renewable sources. Wave energy, powered by wind-driven ocean surface motion, also offers massive global potential.",
       initiatives: [
